@@ -39,7 +39,7 @@ function signed_in(type)
                 userProperty = snapshot.val();
                 console.log(type);
                 console.log(userProperty.doctorUsername);
-                window.location.href="dcotor.html";
+                window.location.href="doctor.html";
 				//document.getElementById("sup").innerHTML= userProperty.doctorUsername;
 
                 return true;
