@@ -34,56 +34,6 @@
 				em.innerHTML = userProperty.doctorEmail;
 				phNo.innerHTML = userProperty.doctorNumber;
 				desi.innerHTML = userProperty.doctorDesignation;
-				//var course = userProperty.courses;
-
-				/*var member = userProperty.memberOf;
-				if(member)
-				{
-					var s = "";
-					var i;
-					for(i=0;i<member.length;i++)
-					{
-						if(member[i] === ' ')
-						{
-							var p1 = document.createElement("P");
-							var t1 =  document.createTextNode(s);
-							p1.appendChild(t1);
-							mem.appendChild(p1);
-							s="";
-						}
-						else if(i==(member.length-1))
-						{
-							s+=member[i];
-							var p1 = document.createElement("P");
-							var t1 =  document.createTextNode(s);
-							p1.appendChild(t1);
-							mem.appendChild(p1);
-						}
-						else
-						{
-							s+=member[i];
-						}
-					}
-
-				}
-				else
-				{
-					var p1 = document.createElement("P");
-					var t1 =  document.createTextNode("none");
-					p1.appendChild(t1);
-					mem.appendChild(p1);
-				}*/
-				/*var pro = userProperty.prourl;
-				if(pro)
-				{
-					var img = document.getElementById("propic");
-					img.src = pro;
-				}
-				else
-				{
-					var img = document.getElementById("propic");
-					img.src = "https://firebasestorage.googleapis.com/v0/b/automation-c28ac.appspot.com/o/UserProPics%2Fano.jpg?alt=media&token=73d028c8-bd28-4456-bf3d-70ca66c6224f";
-				}*/
 
 
 			});
