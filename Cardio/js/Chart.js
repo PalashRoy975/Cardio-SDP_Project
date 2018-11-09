@@ -206,7 +206,7 @@ window.onload = function () {
 
 			}
 			var total=arr2[0];
-            if(arr1[0]!=arr1[1])
+            if(arr1[0]==arr1[1])
 			{
 			    count++;
 			    total = arr2[0];
