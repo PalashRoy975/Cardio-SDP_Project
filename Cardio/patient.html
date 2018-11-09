@@ -50,16 +50,17 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
 	<script src = "js/table_row.js"></script>
 		<script>
-		  // Initialize Firebase
-		  var config = {
-			apiKey: "AIzaSyD9T6fIVInqlsBxFBDZmWIYPuRF8OvjpgM",
-			authDomain: "sdplab-42a4c.firebaseapp.com",
-			databaseURL: "https://sdplab-42a4c.firebaseio.com",
-			projectId: "sdplab-42a4c",
-			storageBucket: "sdplab-42a4c.appspot.com",
-			messagingSenderId: "868906936429"
-		  };
-		  firebase.initializeApp(config);
+
+	  var config = {
+		apiKey: "AIzaSyBdEowm1wWPMbrY09zdM2VYNdBoBUxDVxA",
+		authDomain: "sdplab-dbd0a.firebaseapp.com",
+		databaseURL: "https://sdplab-dbd0a.firebaseio.com",
+		projectId: "sdplab-dbd0a",
+		storageBucket: "sdplab-dbd0a.appspot.com",
+		messagingSenderId: "215031990656"
+	  };
+	  firebase.initializeApp(config);
+
 		</script>
 	<body>
 		<div class="preloader">
@@ -125,7 +126,7 @@
 			<div class="table-wrapper">
 				<div class="table-title">
 					<div class="row">
-						<div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+						<div class="col-sm-8"><h2>Medicine <b>List</b></h2></div>
 						<div class="col-sm-4">
 							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
 						</div>
@@ -137,7 +138,6 @@
 							<th>Medicine Name</th>
 							<th>Schedule</th>
 							<th>Total Days</th>
-							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -145,11 +145,7 @@
 
 						<tr>
 
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
+
 						</tr>
 					</tbody>
 				</table>
@@ -210,7 +206,7 @@
 
 		<!--Do not change it to section id = Profile, you'll die changing all the fields-->
 		<!----------------------------------profile----------------------------->
-		<section id="pricing" class="section"> <!--to change background, search for "profile_bg" in cardio.css-->
+			<section id="pricing" class="section"> <!--to change background, search for "profile_bg" in cardio.css-->
 			<div class="container">
 				<div class="row title text-center">
 				</div>
@@ -315,7 +311,6 @@
 				</div>
 			</div>
 		</section>
-
 			<!--pop-up list for confirmation of the selected medicines-->
 		<div class="modal fade" id="request_confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
@@ -364,7 +359,7 @@
 		<div class="modal fade" id="edit_profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content modal-popup">
-						<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h3 class="white">Edit profile</h3>
 						<form action="" method="get" class="popup-form">
 							<input type="text" id="updatePatient_name" class="form-control form-white" placeholder="Full Name">
