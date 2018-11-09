@@ -96,7 +96,3 @@ function login_func()
 	console.log("After sign in\n");
 
 }
-
-
-
-
