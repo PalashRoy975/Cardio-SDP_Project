@@ -1,6 +1,6 @@
-
-    const soldMedNameArray=[];
-	const soldMedAmountArray=[];
+const soldMedNameArray=[];
+const soldMedAmountArray=[];
+var pharmaName ="hudai";
 
 
 
@@ -148,8 +148,7 @@ window.onload = function () {
 
 	}
 
-
-    function graphDraw(a,b) {
+	function graphDraw(a,b) {
         bufferData = new BufferData(a, b);
 		bufferData.work();
 
@@ -157,52 +156,33 @@ window.onload = function () {
 
     var fullTableData = null;
     var j =0,k=0;
-    firebase.database().ref('/Pharmacy/').once('value').then(function (snapshot) {
-        var preUserproperty = snapshot.val();
-        snapshot.forEach(function(medicine) {
-            console.log(medicine.key);
-            if (medicine.key === "Modina Phrama") // ei jaiga ami sudhu ekta pharama fixed krsi ..tui eita rakhar dorkar nai
 
-                 {
-
-                medicine.forEach(function (medicineName) {
-                    var hudai = medicineName.key;
-                    console.log(hudai);
-                    if (hudai === "Storage") {
-
-                        medicineName.forEach(function (mediDeatails) {
-                            var mediName = mediDeatails.key;
-
-                            console.log(mediName);
-                            var det = mediDeatails.val();
-                            for (var key in det) {
-                                if (det.hasOwnProperty(key)) {
-                                    console.log(key);
-                                    var data = det[key];
-                                    var totSold = data.totalSold;
-                                    var pri = data.price;
-                                    var quant = data.quantity;
-                                    soldMedNameArray[j++] = mediName;
-                                    soldMedAmountArray[k++] = totSold;
-                                    console.log(pri + " " + quant + " " + totSold);
-                                }
-                            }
-                        });
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log("Signed Up ");
+            const userId = user.uid;
+            firebase.database().ref('/Seller/'+userId).once('value').then(function (snapshot) {
+                userProperty = snapshot.val();
+                 var pharmaName = userProperty.sellerPharmacy;
+                console.log(pharmaName);
+                firebase.database().ref('/Pharmacy/'+ pharmaName + '/Storage/').once('value').then(function (snapshot) {
+                 snapshot.forEach(function (mediDeatails) {
+            var mediName = mediDeatails.key;
+            console.log(mediName);
+            var det = mediDeatails.val();
+            for (var key in det) {
+                if (det.hasOwnProperty(key)) {
+                    console.log(key);
+                    var data = det[key];
+                    var totSold = data.totalSold;
+                    var pri = data.price;
+                    var quant = data.quantity;
+                    soldMedNameArray[j++] = mediName;
+                    soldMedAmountArray[k++] = totSold;
+                    console.log(pri + " " + quant + " " + totSold);
                     }
-
-                });
             }
-
-          /*  for (var i = 0; i <soldMedAmountArray.length; i++) {
-                console.log(soldMedAmountArray[i]);
-            }
-
-            for(var i=0;i<soldMedNameArray.length;i++)
-            {
-                console.log(soldMedNameArray[i]);
-            }*/
-
-        });
+                 });
 
       	var medArr=[];
       	var medArrName=[];
@@ -270,5 +250,10 @@ window.onload = function () {
 			console.log(finalArr2);
 			graphDraw(finalArr2,finalArr1);
 	});
+
+
+                })
+        }
+    });
 
 }
