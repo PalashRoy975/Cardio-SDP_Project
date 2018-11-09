@@ -49,18 +49,20 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
 	<script src = "js/table_row.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-			apiKey: "AIzaSyD9T6fIVInqlsBxFBDZmWIYPuRF8OvjpgM",
-			authDomain: "sdplab-42a4c.firebaseapp.com",
-			databaseURL: "https://sdplab-42a4c.firebaseio.com",
-			projectId: "sdplab-42a4c",
-			storageBucket: "sdplab-42a4c.appspot.com",
-			messagingSenderId: "868906936429"
-		  };
-		  firebase.initializeApp(config);
-		</script>
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBdEowm1wWPMbrY09zdM2VYNdBoBUxDVxA",
+	    authDomain: "sdplab-dbd0a.firebaseapp.com",
+	    databaseURL: "https://sdplab-dbd0a.firebaseio.com",
+	    projectId: "sdplab-dbd0a",
+	    storageBucket: "sdplab-dbd0a.appspot.com",
+	    messagingSenderId: "215031990656"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
 	<body>
 		<div class="preloader">
 			<img src="img/loader.gif" alt="Preloader image">
@@ -118,45 +120,87 @@
 		<section id="medicines" class="section section-padded">
 			<div class="container">
 				<div class="row text-center title">
-					<h2>Medicines</h2>
-					<h4 class="light muted">Keep track of all the medicines you are currently taking and you have to take!</h4>
+					<h2>Prescription</h2>
+					<!--<h4 class="light muted">Keep track of all the medicines you are currently taking and you have to take!</h4>-->
 				</div>
-				 <div class="container">
-			<div class="table-wrapper">
-				<div class="table-title">
-					<div class="row">
-						<div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
-						<div class="col-sm-4">
-							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
-						</div>
-					</div>
-				</div>
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th>Medicine Name</th>
-							<th>Schedule</th>
-							<th>Total Days</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
 
+                <div class="table-wrapper">
+                    <form method="post">
+                        <div class="row text-center title">
+                            <h4 style="margin-top: 40px">
+                            Patient Email: <input type="email" style="margin-left: 2%" name="patient_email" id="patient_email" onblur="check(this)"><br>
 
-						<tr>
+                            <script>
+							function check(obj){
+								var myEmail = obj.value;
+								console.log(myEmail);
 
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+								var status = 0;
 
-			</div>
+								var dbRef = firebase.database().ref('/Patient/').once('value').then(function(snapshot) {
+									snapshot.forEach(function(PatientSnapshot) {
+							   			var userProperty = PatientSnapshot.val();
+								   		/*console.log(userProperty);*/
+								   		if(userProperty.patientEmail === myEmail) {
+								   			/*console.log("paisi");*/
+								   			alert(myEmail + " exists");
+								   			status = 1;
+								   			return true;
+								   		}
+								   	});
+									if(status == 0) alert(myEmail + " doesn't exist!!");
+								});
+							}
+							</script>
+							<div name="prescription_id" id="prescription_id" style="margin-top: 10px"></div>
+							<script>
+								function unique() {
+								  return Math.random().toString(36).substr(5, 7);
+								};
+								var ID = unique();
+								prescription_id.innerHTML = ID;
+							</script>
+                            </h4>
+                        </div>
+
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-8" style="margin-top: 40px"></div>
+                                <div class="col-sm-4" style="margin-top: 40px">
+                                	<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Medicine Name</th>
+                                    <th>Schedule</th>
+                                    <th>Total Days</th>
+									<!--<th>Actions</th>-->
+                                </tr>
+                            </thead>
+                            <!--<tbody>
+                                <tr>
+                                    <td><input type="text" class="form-control" name="med_name0" id="medicine_name"></td>
+                                    <td><input type="text" class="form-control" name="sched0" id="schedule"></td>
+                                    <td><input type="text" class="form-control" name="tot_days0" id="total_days"></td>
+                                    <td>
+								        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							        </td>
+						        </tr>
+					        </tbody>-->
+
+                        </table>
+                        <a style="margin-top: 15px; margin-left: 45%">
+                        	<!-- <input type="button" class="btn btn-info complete" value="Submit" onclick="prescription_table();"> -->
+                            <button type="button" class="btn btn-info complete"><i class="fa"></i> Submit</button>
+                        </a>
+                    </form>
+                </div>
 			</div>
 		</section>
 
@@ -380,7 +424,7 @@
 		<div class="modal fade" id="edit_profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content modal-popup">
-						<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h3 class="white">Edit profile</h3>
 						<form action="" method="get" class="popup-form">
 							<input type="text" id="updateDoctor_name" class="form-control form-white" placeholder="Full Name" value="Palash">
