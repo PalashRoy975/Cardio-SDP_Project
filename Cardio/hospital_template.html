@@ -1,4 +1,4 @@
-		<!DOCTYPE html>
+	<!DOCTYPE html>
 	<html lang="en">
 
 	<head>
@@ -42,12 +42,12 @@
 	<script>
 	  // Initialize Firebase
 	  var config = {
-		apiKey: "AIzaSyD9T6fIVInqlsBxFBDZmWIYPuRF8OvjpgM",
-		authDomain: "sdplab-42a4c.firebaseapp.com",
-		databaseURL: "https://sdplab-42a4c.firebaseio.com",
-		projectId: "sdplab-42a4c",
-		storageBucket: "sdplab-42a4c.appspot.com",
-		messagingSenderId: "868906936429"
+	    apiKey: "AIzaSyBdEowm1wWPMbrY09zdM2VYNdBoBUxDVxA",
+	    authDomain: "sdplab-dbd0a.firebaseapp.com",
+	    databaseURL: "https://sdplab-dbd0a.firebaseio.com",
+	    projectId: "sdplab-dbd0a",
+	    storageBucket: "sdplab-dbd0a.appspot.com",
+	    messagingSenderId: "215031990656"
 	  };
 	  firebase.initializeApp(config);
 	</script>
@@ -75,7 +75,8 @@
 						<li><a href="#intro">Intro</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#team">Team</a></li>
-						<li><a href="#pricing">Pricing</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"> Login</a></li>
+						<!--<li><a href="#pricing">Log In</a></li>-->
 						<!--<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>-->
 					   <li> <div class="dropdown">
 							<button id="signLabel" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -121,16 +122,23 @@
 						<!--Seach hospital-->
 						<div class="intro-table intro-table-first">
 							<h3 class="white heading">Search by Hospital</h3>
+
+
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="intro-table intro-table-hover">
-							<h3 class="white heading hide-hover">Search by Pharmacy</h3>
+							<h5 class="white heading hide-hover">Premium Membership</h5>
+							<div class="bottom">
+								<h4 class="white heading small-heading no-margin regular">Register Today</h4>
+								<h4 class="white heading small-pt">20% Discount</h4>
+								<a href="#" class="btn btn-white-fill expand">Register</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="intro-table intro-table-third">
-							<h5 class="white heading">Search by Doctor</h5>
+							<h5 class="white heading">Happy Clients</h5>
 							<div class="owl-testimonials bottom">
 								<div class="item">
 									<h4 class="white heading content">I couldn't be more happy with the results!</h4>
@@ -242,7 +250,7 @@
 		<div class="modal fade" id="doc_signup_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content modal-popup">
-					<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h3 class="white">Doctor Sign Up</h3>
 					<form action="" method="get" class="popup-form">
 						<input type="text" id="doctor_name" class="form-control form-white" placeholder="Full Name" value="Palash">
@@ -273,7 +281,7 @@
 		<div class="modal fade" id="seller_signup_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content modal-popup">
-					<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h3 class="white">Seller Sign Up</h3>
 					<form action="php/action_seller_signup.php" method="get" class="popup-form">
 						<input type="text" id="seller_name" class="form-control form-white" placeholder="Full Name">
@@ -301,7 +309,7 @@
 		<div class="modal fade" id="patient_signup_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content modal-popup">
-					<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
 					<h3 class="white">patient Sign Up</h3>
 					<form action="php/action_patient_signup.php" method="get" class="popup-form">
@@ -395,8 +403,8 @@
 				</div>
 				<div class="row bottom-footer text-center-mobile">
 					<div class="col-sm-8">
-						<p>&copy; 2018 All Rights Reserved. Powered by <a href="http://www.cse.du.ac.bd/">CSEDU</a> </p>
-					</div
+						<p>&copy; 2015 All Rights Reserved. Powered by <a href="http://www.phir.co/">PHIr</a> exclusively for <a href="http://tympanus.net/codrops/">Codrops</a></p>
+					</div>
 					<div class="col-sm-4 text-right text-center-mobile">
 						<ul class="social-footer">
 							<li><a href="http://www.facebook.com/pages/Codrops/159107397912"><i class="fa fa-facebook"></i></a></li>
