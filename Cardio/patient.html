@@ -38,6 +38,7 @@
 
 	</head>
 	<script src="js/signOut.js"></script>
+	<script src="js/ProfilePic.js"></script>
 
 	<link rel="stylesheet" href="css/table_row.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
@@ -221,12 +222,14 @@
 								<form method="post">
 								<div class="col-md-4">
 									<div class="profile-img">
-										<img src="img/brown.jpg">
-										<div class="file btn btn-lg btn-primary">
-											Change Photo
-											<input type="file" name="file"/>
-										</div>
+									<img class="Img">
+									<script>viewPic();</script>
+
+									<div class="file btn btn-lg btn-primary">
+										Change Photo
+										<input type="file" id="dpFile" onchange="getFileData(this);" >
 									</div>
+								</div>
 								</div>
 								<div class="col-md-6">
 									<div class="profile-head">
@@ -408,7 +411,3 @@
 	</body>
 
 	</html>
-
-
-
-
