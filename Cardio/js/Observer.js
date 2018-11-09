@@ -1,4 +1,4 @@
-
+// Strategy Pattern
 class ValidationTool{
   constructor(){}
   validate(){
@@ -75,6 +75,7 @@ function getGender(type){
 
 	}
 }
+//Observer Pattern
 class Observer{
   constructor(person){
     this.person = person;
