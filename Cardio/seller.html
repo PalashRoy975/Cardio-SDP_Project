@@ -132,14 +132,27 @@
 								<div class="row">
 									<div class="col-sm-8" style="margin-top: 40px"></div>
 									<div class="col-sm-4" style="margin-top: 40px">
-										<button type="button" class="btn btn-info add-new" ><i class="fa fa-plus"></i> Medicines Graph</button>
-
+										<button type ="button" id="mediStorage" onclick="graphStorage();">Medicine Storage</button>
+										<button type="button" class="btn btn-info add-new" id ="MediGraph" onclick="graphshow();"><i class="fa fa-plus"></i> Medicines Graph</button>
 									</div>
+
 									<div class="col-sm-4" style="margin-top: 40px">
 										<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
 									</div>
 								</div>
 							</div>
+							<script>
+
+								function graphshow()
+								{
+								    window.location.href = "Barchart.html";
+								}
+								function graphStorage()
+								{
+								    window.location.href = "Storage.html";
+								}
+
+							</script>
 
 							<table class="table table-bordered">
 								<thead>
